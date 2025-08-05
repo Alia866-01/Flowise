@@ -17,7 +17,7 @@ services:
         container_name: flowise-main
         restart: always
         ports:
-            - '${PORT:-3010}:${PORT:-3000}'
+            - '${PORT:-3010}:${PORT:-3010}'
         volumes:
             - ~/.flowise:/root/.flowise
         environment:
