@@ -5,7 +5,7 @@ services:
         image: flowiseai/flowise:latest
         restart: always
         environment:
-            - PORT=${PORT}
+            - '3010:3000'
 
             # DATABASE
             - DATABASE_PATH=${DATABASE_PATH}
@@ -124,7 +124,7 @@ services:
             - REDIS_KEEP_ALIVE=${REDIS_KEEP_ALIVE}
             - ENABLE_BULLMQ_DASHBOARD=${ENABLE_BULLMQ_DASHBOARD}
         ports:
-            - '${PORT}:${PORT}'
+            - '3010:3000'
         healthcheck:
             test: ['CMD', 'curl', '-f', 'http://localhost:${PORT}/api/v1/ping']
             interval: 10s
