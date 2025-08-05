@@ -139,7 +139,7 @@ services:
             - REDIS_KEEP_ALIVE=${REDIS_KEEP_ALIVE}
             - ENABLE_BULLMQ_DASHBOARD=${ENABLE_BULLMQ_DASHBOARD}
         healthcheck:
-            test: ['CMD', 'curl', '-f', 'http://localhost:${PORT:-3000}/api/v1/ping']
+            test: ['CMD', 'curl', '-f', 'http://localhost:3000/api/v1/ping']
             interval: 10s
             timeout: 5s
             retries: 5
