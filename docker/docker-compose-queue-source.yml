@@ -17,13 +17,13 @@ services:
             context: .. # Build using the Dockerfile in the root directory
             dockerfile: docker/Dockerfile
         ports:
-            - '${PORT}:${PORT}'
+            - '3010:3000'
         volumes:
             # Mount local .flowise to container's default location
             - ../.flowise:/root/.flowise
         environment:
             # --- Essential Flowise Vars ---
-            - PORT=${PORT:-3000}
+            - PORT=3000
             - DATABASE_PATH=/root/.flowise
             - SECRETKEY_PATH=/root/.flowise
             - LOG_PATH=/root/.flowise/logs
